@@ -19,7 +19,7 @@ $email = $_POST['email'];
 // Process form submission
 if (isset($_POST['submit'])) {
  
-    $sql = " INSERT INTO Users(fname, lname, email) 
+    $sql = " INSERT INTO Users(fnamce, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
     if ( mysqli_query($conn, $sql)){
         echo 'Success';
