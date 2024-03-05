@@ -4,51 +4,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include './inc/db.php';
+include './inc/form.php';
 
-if (!$conn) {
-    echo 'Error: ' . mysqli_connect_error();
-    exit(); // Stop script execution if connection fails
-}
-
-// Assigning POST data to global variables
-$GLOBALS['fname'] = $_POST['fname'] ?? ''; // Using null coalescing operator to avoid undefined index notice
-$GLOBALS['lname'] = $_POST['lname'] ?? ''; // Using null coalescing operator to avoid undefined index notice
-$GLOBALS['email'] = $_POST['email'] ?? ''; // Using null coalescing operator to avoid undefined index notice
-
-// Process form submission
-if (isset($_POST['submit'])) {
-
-    // Use global variables directly or access them through $GLOBALS array
-    $sql = "INSERT INTO Users(fname, lname, email) VALUES ('".$GLOBALS['fname']."', '".$GLOBALS['lname']."', '".$GLOBALS['email']."')";
-
-    if(empty($fname)){
-        echo 'Vorname ist leer';
-    }
-    elseif(empty($lname)){
-        echo 'Nachname ist leer';
-    }
-    elseif(empty($email)){
-        echo 'Email ist leer';
-    }
-    elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        echo 'Bitte shcreiben Ihre richtiga Email';
-    } else{
-
-        if (mysqli_query($conn, $sql)) {
-            header('Location:index.php');
-            echo 'Success';
-        } else {
-            echo 'Failed: ' . mysqli_error($conn);
-        }
-    }
-
-
-
-    // Sanitize output to prevent XSS
-    //echo "<h1>" . htmlspecialchars($fname) . "<br>" . htmlspecialchars($lname) . "<br>" . htmlspecialchars($email) . "</h1> ";
-}
-
-
+$sql = 'SELECT * FROM Users';
+$result = mysqli_query($conn, $sql);
+$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+echo '<pre>';
+print_r($users);
+echo '</pre>';
 ?>
 
 
