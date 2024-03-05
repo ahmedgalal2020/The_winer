@@ -3,8 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Database connection
-$conn = mysqli_connect('localhost', 'u294421851_thewiner', 'Am13111991', 'u294421851_thewiner');
+include './inc/db.php';
+
 
 if (!$conn) {
     echo 'Error: ' . mysqli_connect_error();
