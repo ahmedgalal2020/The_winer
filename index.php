@@ -6,11 +6,6 @@ error_reporting(E_ALL);
 include './inc/db.php';
 include './inc/form.php';
 include './inc/fetch.php';
-
-
-
-
-
 include './inc/closedb.php';
 
 ?>
