@@ -11,17 +11,19 @@ if (!$conn) {
     exit(); // Stop script execution if connection fails
 }
 
-
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
 
 
 // Process form submission
 if (isset($_POST['submit'])) {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $email = $_POST['email'];
+ 
     $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
+    
     mysqli_query($conn, $sql);
+
 
     // Sanitize output to prevent XSS
     //echo "<h1>" . htmlspecialchars($fname) . "<br>" . htmlspecialchars($lname) . "<br>" . htmlspecialchars($email) . "</h1> ";
