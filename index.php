@@ -29,7 +29,13 @@ if (isset($_POST['submit'])) {
     }
     elseif(empty($email)){
         echo 'Email ist leer';
-    }else{
+    }
+    elseif(filter_var($email,)){
+        echo 'Email ist leer';
+    }
+    
+    
+    else{
 
         if (mysqli_query($conn, $sql)) {
             header('Location:index.php');
