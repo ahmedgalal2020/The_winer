@@ -3,7 +3,7 @@ $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
 
-echo $fname . ' ' . $lname . ' ' . $email;
+echo <h1></h1> . $fname . '<br> ' . $lname . '<br> ' . $email .</h1>;
 ?>
 
 <!DOCTYPE html>
