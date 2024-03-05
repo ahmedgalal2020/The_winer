@@ -30,12 +30,9 @@ if (isset($_POST['submit'])) {
     elseif(empty($email)){
         echo 'Email ist leer';
     }
-    elseif(filter_var($email,)){
-        echo 'Email ist leer';
-    }
-    
-    
-    else{
+    elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        echo 'Bitte shcreiben Ihre richtiga Email';
+    } else{
 
         if (mysqli_query($conn, $sql)) {
             header('Location:index.php');
