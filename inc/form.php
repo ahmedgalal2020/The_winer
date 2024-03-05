@@ -4,9 +4,6 @@ if (!$conn) {
     exit(); // Stop script execution if connection fails
 }
 
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$email = $_POST['email'];
 
 
 // Process form submission
@@ -15,7 +12,7 @@ if (isset($_POST['submit'])) {
     $fname = mysqli_real_escape_string($conn,$_POST['fname'] );
     $lname = mysqli_real_escape_string($conn,$_POST['lname'] );
     $email = mysqli_real_escape_string($conn,$_POST['email'] );
-    
+
     $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
 
