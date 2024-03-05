@@ -32,7 +32,7 @@ include './inc/closedb.php';
     </form>
 
 <?php foreach($usears as $user): ?>
-    <h1> <?php echo htmlspecialchars($user['fname']) .' '. htmlspecialchars($user['lname']);?></h1>
+    <h1> <?php echo htmlspecialchars($user['fname']) .' '. htmlspecialchars($user['lname']).'<br> '. htmlspecialchars($user['email']);?></h1>
 
 <?php endforeach ?>
 
