@@ -5,34 +5,33 @@ error_reporting(E_ALL);
 
 include './inc/db.php';
 
-
 if (!$conn) {
     echo 'Error: ' . mysqli_connect_error();
     exit(); // Stop script execution if connection fails
 }
 
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$email = $_POST['email'];
-
+// Assigning POST data to global variables
+$GLOBALS['fname'] = $_POST['fname'] ?? ''; // Using null coalescing operator to avoid undefined index notice
+$GLOBALS['lname'] = $_POST['lname'] ?? ''; // Using null coalescing operator to avoid undefined index notice
+$GLOBALS['email'] = $_POST['email'] ?? ''; // Using null coalescing operator to avoid undefined index notice
 
 // Process form submission
 if (isset($_POST['submit'])) {
 
-    $sql = " INSERT INTO Users(fname, lname, email) 
-    VALUES ('$fname', '$lname', '$email')";
+    // Use global variables directly or access them through $GLOBALS array
+    $sql = "INSERT INTO Users(fname, lname, email) VALUES ('".$GLOBALS['fname']."', '".$GLOBALS['lname']."', '".$GLOBALS['email']."')";
     if (mysqli_query($conn, $sql)) {
         echo 'Success';
     } else {
-        echo 'Faild';
+        echo 'Failed: ' . mysqli_error($conn);
     }
-
-
-
     // Sanitize output to prevent XSS
     //echo "<h1>" . htmlspecialchars($fname) . "<br>" . htmlspecialchars($lname) . "<br>" . htmlspecialchars($email) . "</h1> ";
 }
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
