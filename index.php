@@ -31,7 +31,7 @@ include './inc/closedb.php';
     <input type="submit" name="submit" value="send">
     </form>
 
-<?php foreach($usears as $user): ?>
+<?php foreach($users as $user): ?>
     <h1> <?php echo htmlspecialchars($user['fname']) .' '. htmlspecialchars($user['lname']).'<br> '. htmlspecialchars($user['email']);?></h1>
 
 <?php endforeach ?>
