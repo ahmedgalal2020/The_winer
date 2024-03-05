@@ -1,10 +1,17 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Database connection
 $conn = mysqli_connect('localhost', 'u294421851_thewiner', 'Am13111991', 'u294421851_thewiner1');
 
-if(!$conn){
-    echo 'Error' . mysqli_connect_error();
+if (!$conn) {
+    echo 'Error: ' . mysqli_connect_error();
+    exit(); // Stop script execution if connection fails
 }
+
 
 // Process form submission
 if (isset($_POST['submit'])) {
