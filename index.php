@@ -18,15 +18,15 @@ $email = $_POST['email'];
 
 // Process form submission
 if (isset($_POST['submit'])) {
- 
+
     $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
-    if ( mysqli_query($conn, $sql)){
+    if (mysqli_query($conn, $sql)) {
         echo 'Success';
-    }else {
+    } else {
         echo 'Faild';
     }
-   
+
 
 
     // Sanitize output to prevent XSS
