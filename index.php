@@ -5,13 +5,14 @@ error_reporting(E_ALL);
 
 include './inc/db.php';
 include './inc/form.php';
+include './inc/fetch.php';
 
-$sql = 'SELECT * FROM Users';
-$result = mysqli_query($conn, $sql);
-$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-echo '<pre>';
-print_r($users);
-echo '</pre>';
+
+
+
+
+include './inc/closedb.php';
+
 ?>
 
 
@@ -29,5 +30,12 @@ echo '</pre>';
     <input type="email" name="email" id="email" placeholder="Email">
     <input type="submit" name="submit" value="send">
     </form>
+
+<?php foreach($usears as $user): ?>
+    <h1> <?php echo htmlspecialchars($user['fname']) .' '. htmlspecialchars($user['lname']);?></h1>
+
+<?php endforeach ?>
+
+
 </body>
 </html>

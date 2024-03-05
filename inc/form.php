@@ -4,29 +4,30 @@ if (!$conn) {
     exit(); // Stop script execution if connection fails
 }
 
-// Assigning POST data to global variables
-$GLOBALS['fname'] = $_POST['fname'] ?? ''; // Using null coalescing operator to avoid undefined index notice
-$GLOBALS['lname'] = $_POST['lname'] ?? '';
-$GLOBALS['email'] = $_POST['email'] ?? ''; 
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+
 
 // Process form submission
 if (isset($_POST['submit'])) {
+    // Assigning POST data to global variables
+    $fname = mysqli_real_escape_string($conn,$_POST['fname'] );
+    $lname = mysqli_real_escape_string($conn,$_POST['lname'] );
+    $email = mysqli_real_escape_string($conn,$_POST['email'] );
+    
+    $sql = " INSERT INTO Users(fname, lname, email) 
+    VALUES ('$fname', '$lname', '$email')";
 
-    // Use global variables directly or access them through $GLOBALS array
-    $sql = "INSERT INTO Users(fname, lname, email) VALUES ('".$GLOBALS['fname']."', '".$GLOBALS['lname']."', '".$GLOBALS['email']."')";
-
-    if(empty($fname)){
+    if (empty($fname)) {
         echo 'Vorname ist leer';
-    }
-    elseif(empty($lname)){
+    } elseif (empty($lname)) {
         echo 'Nachname ist leer';
-    }
-    elseif(empty($email)){
+    } elseif (empty($email)) {
         echo 'Email ist leer';
-    }
-    elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo 'Bitte shcreiben Ihre richtiga Email';
-    } else{
+    } else {
 
         if (mysqli_query($conn, $sql)) {
             header('Location:index.php');
