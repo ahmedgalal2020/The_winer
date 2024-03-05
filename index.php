@@ -1,4 +1,7 @@
 <?php
+$conn = mysql_connect('localhost','u294421851_thewiner','Am13111991','u294421851_thewiner')
+
+
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
