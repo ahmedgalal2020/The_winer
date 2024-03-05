@@ -3,6 +3,7 @@ $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
 
+if (isset($_POST['submit']))
 echo "<h1>" . $fname . "<br>" . $lname . "<br>" . $email . "</h1> ";
 
 ?>
