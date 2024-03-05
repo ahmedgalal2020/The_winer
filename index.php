@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
     // Use global variables directly or access them through $GLOBALS array
     $sql = "INSERT INTO Users(fname, lname, email) VALUES ('".$GLOBALS['fname']."', '".$GLOBALS['lname']."', '".$GLOBALS['email']."')";
     if (mysqli_query($conn, $sql)) {
+        header('Location:index.php');
         echo 'Success';
     } else {
         echo 'Failed: ' . mysqli_error($conn);
