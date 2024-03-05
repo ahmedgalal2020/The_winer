@@ -1,6 +1,11 @@
 <?php
 $conn = mysql_connect('localhost','u294421851_thewiner','Am13111991','u294421851_thewiner');
 
+if($conn){
+    echo 'success';
+}else{
+    echo 'faild';
+}
 
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
