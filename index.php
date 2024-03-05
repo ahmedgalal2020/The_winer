@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 include './inc/db.php';
 
@@ -17,7 +19,7 @@ $email = $_POST['email'];
 // Process form submission
 if (isset($_POST['submit'])) {
  
-    $sql = " INSERT INTO Users(fnamce, lname, email) 
+    $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
     if ( mysqli_query($conn, $sql)){
         echo 'Success';
