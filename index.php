@@ -20,12 +20,27 @@ if (isset($_POST['submit'])) {
 
     // Use global variables directly or access them through $GLOBALS array
     $sql = "INSERT INTO Users(fname, lname, email) VALUES ('".$GLOBALS['fname']."', '".$GLOBALS['lname']."', '".$GLOBALS['email']."')";
-    if (mysqli_query($conn, $sql)) {
-        header('Location:index.php');
-        echo 'Success';
-    } else {
-        echo 'Failed: ' . mysqli_error($conn);
+
+    if(empty($fname)){
+        echo 'Vorname ist leer';
     }
+    elseif(empty($lname)){
+        echo 'Nachname ist leer';
+    }
+    elseif(empty($email)){
+        echo 'Email ist leer';
+    }else{
+
+        if (mysqli_query($conn, $sql)) {
+            header('Location:index.php');
+            echo 'Success';
+        } else {
+            echo 'Failed: ' . mysqli_error($conn);
+        }
+    }
+
+
+
     // Sanitize output to prevent XSS
     //echo "<h1>" . htmlspecialchars($fname) . "<br>" . htmlspecialchars($lname) . "<br>" . htmlspecialchars($email) . "</h1> ";
 }
