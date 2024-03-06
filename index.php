@@ -38,16 +38,16 @@ include './inc/closedb.php';
     <div class="row">
     <?php foreach ($users as $user): ?>
        <div class="col-sm-6">
-
+       
      
-        <div class="card">
+        <div class="card my-2">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
   </div>
-
   <ul class="list-group list-group-flush">
     <li class="list-group-item"> <?php echo htmlspecialchars($user['email'])?></li>
   </ul>
+
 </div>
 </div>
         <?php endforeach ?>
