@@ -1,2 +1,2 @@
 alert('hi js');
-console.log
+console.log('')
