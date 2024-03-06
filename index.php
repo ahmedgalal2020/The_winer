@@ -27,7 +27,7 @@ include './inc/closedb.php';
         <form action="index.php" method="POST">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
-    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="">
+    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname?>">
     <div id="emailHelp" class="form-text error"><?php echo $errors['fnameError']?>  </div>
   </div>
   <div class="mb-3">
