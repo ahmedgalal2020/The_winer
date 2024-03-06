@@ -9,7 +9,8 @@ include './inc/closedb.php';
 ?>
 <?php include_once './parts/header.php'; ?>
 
-<div class="mx-auto p-2" style="width: 500px;">
+<div class="position-relative text-center">
+<div class="col-md-5 p-lg-5 mx-auto my-5">
 
         <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
              <div class="mb-3">
@@ -32,15 +33,7 @@ include './inc/closedb.php';
 </form>
 
 
-
-        <!--<form action="index.php" method="POST">
-    <input type="text" name="fname" id="fname" placeholder="Vor name">
-    <input type="text" name="lname" id="lname" placeholder="Nach name">
-    <input type="email" name="email" id="email" placeholder="Email">
-    <input type="submit" name="submit" value="send">
-    </form>.-->
-
-
+    <!-- cards -->
     <?php foreach ($users as $user): ?>
         <div class="card" style="width: 18rem; margin-top:30px" >
         <div class="card-header">
@@ -58,4 +51,3 @@ include './inc/closedb.php';
         </div>
         </div>
         <?php include_once './parts/footer.php'; ?>
-
