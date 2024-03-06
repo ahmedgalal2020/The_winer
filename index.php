@@ -41,7 +41,7 @@ include './inc/closedb.php';
 
 
     <?php foreach ($users as $user): ?>
-        <div class="card" style="width: 18rem;">
+        <div class="card m-20" style="width: 18rem;">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
   </div>
@@ -51,7 +51,7 @@ include './inc/closedb.php';
 </div>
 
 
-                 <h1> <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) . '<br> ' . htmlspecialchars($user['email']); ?></h1>
+            
 
         <?php endforeach ?>
 
