@@ -10,7 +10,7 @@ include './inc/closedb.php';
 <?php include_once './parts/header.php'; ?>
 
 
-        <form action="index.php" method="POST" class="mt-4">
+        <form action="<?php $_SERVER['PHP_SELF']?>" method="POST" class="mt-4">
              <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
     <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname ?>">
@@ -41,6 +41,16 @@ include './inc/closedb.php';
 
 
     <?php foreach ($users as $user): ?>
+        <div class="card" style="width: 18rem;">
+        <div class="card-header">
+        <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <?php echo htmlspecialchars($user['email'])?></li>
+  </ul>
+</div>
+
+
                  <h1> <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) . '<br> ' . htmlspecialchars($user['email']); ?></h1>
 
         <?php endforeach ?>

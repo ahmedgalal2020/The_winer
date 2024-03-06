@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
     $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
      if (mysqli_query($conn, $sql)) {
-        header('Location:index.php');
+        header('Location: ' . $_SERVER['PHP_SELF']);
         echo 'Success';
     } else {
         echo 'Failed: ' . mysqli_error($conn);
