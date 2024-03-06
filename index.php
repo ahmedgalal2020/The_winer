@@ -9,36 +9,24 @@ include './inc/fetch.php';
 include './inc/closedb.php';
 
 ?>
+<?php include_once './parts/header.php';?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet" >
-
-</head>
-<body>
-    <section>
-        <div class="container">
         <form action="index.php" method="POST" class="mt-4">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
-    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname?>">
-    <div id="emailHelp" class="form-text error"><?php echo $errors['fnameError']?>  </div>
+    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname ?>">
+    <div id="emailHelp" class="form-text error"><?php echo $errors['fnameError'] ?>  </div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nachname</label>
-    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" value="<?php echo $lname?>">
-    <div id="emailHelp" class="form-text error"><?php echo $errors['lnameError']?> </div>
+    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" value="<?php echo $lname ?>">
+    <div id="emailHelp" class="form-text error"><?php echo $errors['lnameError'] ?> </div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?php echo $email?>">
-    <div id="emailHelp" class="form-text error"><?php echo $errors['emailError']?> </div>
+    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?php echo $email ?>">
+    <div id="emailHelp" class="form-text error"><?php echo $errors['emailError'] ?> </div>
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
@@ -55,17 +43,9 @@ include './inc/closedb.php';
 
 
     <?php foreach ($users as $user): ?>
-                                                                                                                                                                <h1> <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) . '<br> ' . htmlspecialchars($user['email']); ?></h1>
+     <h1> <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) . '<br> ' . htmlspecialchars($user['email']); ?></h1>
 
-<?php endforeach ?>
-        </div>
-    </section>
-   
+        <?php endforeach ?>
 
+        <?php include_once './parts/footer.php';?>
 
-
-<script src="./js/bootstrap.bundle.min.js"></script>
-<script src="./js/script.js"></script>
-
-</body>
-</html>
