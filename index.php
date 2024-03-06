@@ -40,7 +40,7 @@ include './inc/closedb.php';
        <div class="col-sm-6">
        
      
-        <div class="card my-2">
+        <div class="card my-2 text-center">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
   </div>
