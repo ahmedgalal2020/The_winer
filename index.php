@@ -26,19 +26,19 @@ include './inc/closedb.php';
         <div class="container">
         <form action="index.php" method="POST">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">s</div>
+    <label for="exampleInputEmail1" class="form-label">Vorname</label>
+    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname ?>">
+    <div id="emailHelp" class="form-text error"><?php echo $errors['fnameError']?>  </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nachname</label>
+    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" value="<?php echo $lname ?>">
+    <div id="emailHelp" class="form-text error"><?php echo $errors['lnameError']?> </div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">s</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">s</div>
+    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?php echo $emil ?>">
+    <div id="emailHelp" class="form-text error"><?php echo $errors['emailError']?> </div>
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>

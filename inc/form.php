@@ -3,11 +3,34 @@ if (!$conn) {
     echo 'Error: ' . mysqli_connect_error();
     exit(); // Stop script execution if connection fails
 }
-
+$errors =[
+    'fnameError'=>'',
+    'lnameError'=>'',
+    'emailError'=>'',
+];
 
 
 // Process form submission
 if (isset($_POST['submit'])) {
+
+    //Validation first name
+    if (empty($fname)) {
+        $errors['fnameError']='Vorname ist leer';
+    } 
+    //Validation last name
+    if (empty($lname)) {
+        $errors['lnameError']='Nachname ist leer';
+        echo 'Nachname ist leer';
+    } 
+    //Validation email
+    if (empty($email)) {
+        $errors['emailError']='Email ist leer';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['emailError']='Bitte shcreiben Ihre richtiga Email';
+    } 
+    
+    //Validation no more Errors 
+    if(!array_filter($errors)){
     // Assigning POST data to global variables
     $fname = mysqli_real_escape_string($conn,$_POST['fname'] );
     $lname = mysqli_real_escape_string($conn,$_POST['lname'] );
@@ -15,27 +38,12 @@ if (isset($_POST['submit'])) {
 
     $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
-
-    if (empty($fname)) {
-        echo 'Vorname ist leer';
-    } elseif (empty($lname)) {
-        echo 'Nachname ist leer';
-    } elseif (empty($email)) {
-        echo 'Email ist leer';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo 'Bitte shcreiben Ihre richtiga Email';
+     if (mysqli_query($conn, $sql)) {
+        header('Location:index.php');
+        echo 'Success';
     } else {
-
-        if (mysqli_query($conn, $sql)) {
-            header('Location:index.php');
-            echo 'Success';
-        } else {
-            echo 'Failed: ' . mysqli_error($conn);
-        }
+        echo 'Failed: ' . mysqli_error($conn);
     }
 
-
-
-    // Sanitize output to prevent XSS
-    //echo "<h1>" . htmlspecialchars($fname) . "<br>" . htmlspecialchars($lname) . "<br>" . htmlspecialchars($email) . "</h1> ";
+    }
 }
