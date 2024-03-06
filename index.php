@@ -25,15 +25,37 @@ include './inc/closedb.php';
     <section>
         <div class="container">
         <form action="index.php" method="POST">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">s</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">s</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">s</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
+</form>
+
+
+
+        <!--<form action="index.php" method="POST">
     <input type="text" name="fname" id="fname" placeholder="Vor name">
     <input type="text" name="lname" id="lname" placeholder="Nach name">
     <input type="email" name="email" id="email" placeholder="Email">
     <input type="submit" name="submit" value="send">
-    </form>
+    </form>.-->
 
 
-    <?php foreach($users as $user): ?>
-    <h1> <?php echo htmlspecialchars($user['fname']) .' '. htmlspecialchars($user['lname']).'<br> '. htmlspecialchars($user['email']);?></h1>
+    <?php foreach ($users as $user): ?>
+                                                                                                                                                                <h1> <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) . '<br> ' . htmlspecialchars($user['email']); ?></h1>
 
 <?php endforeach ?>
         </div>
