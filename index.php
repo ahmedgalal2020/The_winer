@@ -9,7 +9,8 @@ include './inc/closedb.php';
 ?>
 <?php include_once './parts/header.php'; ?>
 
-
+<div class="position-relative">
+<div class="position-absolute top-50 start-50 translate-middle">
         <form action="<?php $_SERVER['PHP_SELF']?>" method="POST" class="mt-4">
              <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
@@ -54,6 +55,7 @@ include './inc/closedb.php';
             
 
         <?php endforeach ?>
-
+        </div>
+        </div>
         <?php include_once './parts/footer.php'; ?>
 
