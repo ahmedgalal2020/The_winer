@@ -35,7 +35,10 @@ include './inc/closedb.php';
 
     <!-- cards -->
     <?php foreach ($users as $user): ?>
-        <div class="card" style="width: 18rem; margin-top:30px" >
+       <div class="col-sm-6">
+
+     
+        <div class="card">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
   </div>
@@ -44,10 +47,10 @@ include './inc/closedb.php';
   </ul>
 </div>
 
-
-            
-
         <?php endforeach ?>
+        </div>
+
+        
         </div>
         </div>
         <?php include_once './parts/footer.php'; ?>
