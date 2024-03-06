@@ -20,12 +20,14 @@ if (isset($_POST['submit'])) {
     //Validation last name
     if (empty($lname)) {
         $errors['lnameError']='Nachname ist leer';
-        echo 'Nachname ist leer';
+   
     } 
     //Validation email
     if (empty($email)) {
+
         $errors['emailError']='Email ist leer';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
         $errors['emailError']='Bitte shcreiben Ihre richtiga Email';
     } 
     
