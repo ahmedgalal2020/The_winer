@@ -41,7 +41,7 @@ include './inc/closedb.php';
 
 
     <?php foreach ($users as $user): ?>
-        <div class="card" style="width: 18rem; margin:30px">
+        <div class="card" style="width: 18rem; margin-top:30px">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
   </div>
