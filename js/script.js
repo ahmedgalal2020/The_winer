@@ -1,1 +1,1 @@
-console.log("test conection")
+alert("test conection")
