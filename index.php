@@ -11,7 +11,7 @@ include './inc/closedb.php';
 
 <div class="position-relative">
 <div class="position-absolute top-50 start-50 translate-middle">
-        <form action="<?php $_SERVER['PHP_SELF']?>" method="POST" class="mt-4">
+        <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
              <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
     <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname ?>">
