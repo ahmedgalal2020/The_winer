@@ -35,6 +35,7 @@ include './inc/closedb.php';
         </div>
 
     <!-- cards -->
+    <div class="row">
     <?php foreach ($users as $user): ?>
        <div class="col-sm-6">
 
@@ -42,6 +43,7 @@ include './inc/closedb.php';
         <div class="card">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
+  </div>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"> <?php echo htmlspecialchars($user['email'])?></li>
