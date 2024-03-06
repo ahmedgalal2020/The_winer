@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 include './inc/db.php';
 include './inc/form.php';
@@ -9,11 +7,11 @@ include './inc/fetch.php';
 include './inc/closedb.php';
 
 ?>
-<?php include_once './parts/header.php';?>
+<?php include_once './parts/header.php'; ?>
 
 
         <form action="index.php" method="POST" class="mt-4">
-  <div class="mb-3">
+             <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
     <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname ?>">
     <div id="emailHelp" class="form-text error"><?php echo $errors['fnameError'] ?>  </div>
@@ -43,9 +41,9 @@ include './inc/closedb.php';
 
 
     <?php foreach ($users as $user): ?>
-     <h1> <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) . '<br> ' . htmlspecialchars($user['email']); ?></h1>
+                 <h1> <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) . '<br> ' . htmlspecialchars($user['email']); ?></h1>
 
         <?php endforeach ?>
 
-        <?php include_once './parts/footer.php';?>
+        <?php include_once './parts/footer.php'; ?>
 
