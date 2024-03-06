@@ -24,7 +24,7 @@ include './inc/closedb.php';
 <body>
     <section>
         <div class="container">
-        <form action="index.php" method="POST">
+        <form action="index.php" method="POST" class="mt-4">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
     <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname?>">
@@ -32,12 +32,12 @@ include './inc/closedb.php';
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nachname</label>
-    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" value="">
+    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" value="<?php echo $lname?>">
     <div id="emailHelp" class="form-text error"><?php echo $errors['lnameError']?> </div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="">
+    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?php echo $email?>">
     <div id="emailHelp" class="form-text error"><?php echo $errors['emailError']?> </div>
   </div>
 
