@@ -21,8 +21,8 @@ include './inc/closedb.php';
 
 </head>
 <body>
-    <div class="section">
-        <div class="contaniner">
+    <section>
+        <div class="container">
         <form action="index.php" method="POST">
     <input type="text" name="fname" id="fname" placeholder="Vor name">
     <input type="text" name="lname" id="lname" placeholder="Nach name">
@@ -30,13 +30,13 @@ include './inc/closedb.php';
     <input type="submit" name="submit" value="send">
     </form>
 
-    
+
     <?php foreach($users as $user): ?>
     <h1> <?php echo htmlspecialchars($user['fname']) .' '. htmlspecialchars($user['lname']).'<br> '. htmlspecialchars($user['email']);?></h1>
 
 <?php endforeach ?>
         </div>
-    </div>
+    </section>
    
 
 
