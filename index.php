@@ -21,17 +21,25 @@ include './inc/closedb.php';
 
 </head>
 <body>
-    <form action="index.php" method="POST">
+    <div class="section">
+        <div class="contaniner">
+        <form action="index.php" method="POST">
     <input type="text" name="fname" id="fname" placeholder="Vor name">
     <input type="text" name="lname" id="lname" placeholder="Nach name">
     <input type="email" name="email" id="email" placeholder="Email">
     <input type="submit" name="submit" value="send">
     </form>
 
-<?php foreach($users as $user): ?>
+    
+    <?php foreach($users as $user): ?>
     <h1> <?php echo htmlspecialchars($user['fname']) .' '. htmlspecialchars($user['lname']).'<br> '. htmlspecialchars($user['email']);?></h1>
 
 <?php endforeach ?>
+        </div>
+    </div>
+   
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
