@@ -31,7 +31,8 @@ include './inc/closedb.php';
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
 </form>
-
+        </div>
+        </div>
 
     <!-- cards -->
     <?php foreach ($users as $user): ?>
@@ -49,8 +50,6 @@ include './inc/closedb.php';
 
         <?php endforeach ?>
         </div>
-
         
-        </div>
-        </div>
+        
         <?php include_once './parts/footer.php'; ?>
