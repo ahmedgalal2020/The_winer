@@ -28,7 +28,12 @@ include './inc/closedb.php';
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
-    <div id="successMessage" class="form-text error"><?php echo $_SESSION['Success']; ?></div>
+  <?php if(isset($_SESSION['Success'])): ?>
+    <div id="successMessage" class="form-text success">hi</div>
+    <?php 
+    unset($_SESSION['Success']); 
+    ?>
+    <?php endif; ?>
         </form>
         </div>
         </div>
