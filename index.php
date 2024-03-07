@@ -46,6 +46,7 @@ Der Gewinner
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Der Gewinner ist</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <?php foreach ($users as $user): ?>
       <div class="modal-body">
       <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) ?>
       </div>
@@ -73,7 +74,7 @@ Der Gewinner
     <!-- cards -->
     <div class="row">
       <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
-    <?php foreach ($users as $user): ?>
+   
                        <div class="col-sm-6">
                         <div id='card'class="card my-2 text-center">
                         <div class="card-header">
