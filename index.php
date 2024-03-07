@@ -9,7 +9,7 @@ include './inc/closedb.php';
 <div class="position-relative text-center">
 <div class="col-md-5 p-lg-5 mx-auto my-5">
 
-        <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
              <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
     <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" value="<?php echo $fname ?>">
@@ -31,27 +31,37 @@ include './inc/closedb.php';
         </div>
         </div>
 
-<!-- Vertically centered modal -->
-<div class="modal-dialog modal-dialog-centered">
-<div class="modal" tabindex="-1">
+
+        
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal-dialog modal-dialog-centered fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        ...
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
   </div>
 </div>
-   
-</div>
+
+
+
+
+
+
 
 
 
@@ -59,17 +69,17 @@ include './inc/closedb.php';
     <div class="row">
       <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
     <?php foreach ($users as $user): ?>
-       <div class="col-sm-6">
-        <div id='card'class="card my-2 text-center">
-        <div class="card-header">
-        <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> <?php echo htmlspecialchars($user['email'])?></li>
-  </ul>
+               <div class="col-sm-6">
+                <div id='card'class="card my-2 text-center">
+                <div class="card-header">
+                <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) ?>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <?php echo htmlspecialchars($user['email']) ?></li>
+          </ul>
 
-</div>
-</div>
+        </div>
+        </div>
         <?php endforeach ?>
         </div>
         
