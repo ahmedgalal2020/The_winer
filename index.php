@@ -1,11 +1,8 @@
 <?php
-
-
 include './inc/db.php';
 include './inc/form.php';
 include './inc/fetch.php';
 include './inc/closedb.php';
-
 ?>
 <?php include_once './parts/header.php'; ?>
 
