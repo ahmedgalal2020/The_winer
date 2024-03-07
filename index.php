@@ -27,6 +27,7 @@ include './inc/closedb.php';
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
+  <div id="emailHelp" class="form-text error"><?php echo $errors['Success'] ?>  </div>
         </form>
         </div>
         </div>

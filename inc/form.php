@@ -13,6 +13,7 @@ $errors =[
     'fnameError'=>'',
     'lnameError'=>'',
     'emailError'=>'',
+    'Success'=>'',
 ];
 
 
@@ -48,7 +49,7 @@ if (isset($_POST['submit'])) {
     VALUES ('$fname', '$lname', '$email')";
      if (mysqli_query($conn, $sql)) {
         header('Location: ' . $_SERVER['PHP_SELF']);
-        echo 'Success';
+        $errors['Success']='Der Name wurde erfolgreich hinzugefügt';
     } else {
         echo 'Failed: ' . mysqli_error($conn);
     }
