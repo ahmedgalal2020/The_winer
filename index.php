@@ -27,7 +27,7 @@ include './inc/closedb.php';
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
-</form>
+        </form>
         </div>
         </div>
 
@@ -49,17 +49,21 @@ Der Gewinner
       <div class="modal-body">
       <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) ?>
       </div>
-      <div class="modal-footer">
+     <!--  <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hinzufügen einer weiteren Person
-</button>
+        </button>
         <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
 
 
-
+  <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hinzufügen einer weiteren Person
+        </button>
+        <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
+      </div> -->
 
 
 
@@ -70,17 +74,17 @@ Der Gewinner
     <div class="row">
       <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
     <?php foreach ($users as $user): ?>
-               <div class="col-sm-6">
-                <div id='card'class="card my-2 text-center">
-                <div class="card-header">
-                <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) ?>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"> <?php echo htmlspecialchars($user['email']) ?></li>
-          </ul>
+                       <div class="col-sm-6">
+                        <div id='card'class="card my-2 text-center">
+                        <div class="card-header">
+                        <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) ?>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> <?php echo htmlspecialchars($user['email']) ?></li>
+                  </ul>
 
-        </div>
-        </div>
+                </div>
+                </div>
         <?php endforeach ?>
         </div>
         
