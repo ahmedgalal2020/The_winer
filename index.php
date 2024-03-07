@@ -36,7 +36,7 @@ include './inc/closedb.php';
       <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
     <?php foreach ($users as $user): ?>
        <div class="col-sm-6">
-        <div class="card my-2 text-center">
+        <div id='card'class="card my-2 text-center">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
   </div>

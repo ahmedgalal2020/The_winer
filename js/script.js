@@ -1,10 +1,11 @@
 // Der Gewinner
 
 const win = document.querySelector('#winner');
+const card = document.querySelector('#card');
 
 win.addEventListener('click',function(){
 
-    alert('test');
+    card.style.display = 'flex';
 
 });
 
