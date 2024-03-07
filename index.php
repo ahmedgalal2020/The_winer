@@ -30,7 +30,7 @@ include './inc/closedb.php';
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
   <?php if(isset($_SESSION['Success'])): ?>
     <div id="successMessage" class="form-text success">hi</div>
-
+    <?php unset($_SESSION['Success']); ?>
     <?php endif; ?>
         </form>
         </div>
