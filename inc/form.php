@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (!$conn) {
     echo 'Error: ' . mysqli_connect_error();
     exit(); // Stop script execution if connection fails
