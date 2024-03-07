@@ -13,9 +13,10 @@ $errors =[
     'fnameError'=>'',
     'lnameError'=>'',
     'emailError'=>'',
-    'Success'=>'',
+    
 ];
 
+session_start();
 
 // Process form submission
 if (isset($_POST['submit'])) {
@@ -48,9 +49,9 @@ if (isset($_POST['submit'])) {
     $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
      if (mysqli_query($conn, $sql)) {
-        $errors['Success']='Der Name wurde erfolgreich hinzugefügt';
+        $_SESSION['Success'] = 'Der Name wurde erfolgreich hinzugefügt';
         header('Location: ' . $_SERVER['PHP_SELF']);
-        echo 'Failed: ';
+       
     } else {
         echo 'Failed: ' . mysqli_error($conn);
     }
