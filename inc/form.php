@@ -18,7 +18,7 @@ $errors =[
     
 ];
 
-session_start();
+
 
 // Process form submission
 if (isset($_POST['submit'])) {

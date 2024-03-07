@@ -1,4 +1,5 @@
 <?php
+session_start();
 include './inc/db.php';
 include './inc/form.php';
 include './inc/fetch.php';
@@ -27,7 +28,7 @@ include './inc/closedb.php';
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
-  
+
   <?php if(isset($_SESSION['Success'])): ?>
     <div id="successMessage" class="form-text success"><?php echo $_SESSION['Success']; ?></div>
     <?php 
