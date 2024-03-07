@@ -33,7 +33,8 @@ include './inc/closedb.php';
 
 <!-- Vertically centered modal -->
 <div class="modal-dialog modal-dialog-centered">
-
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Modal title</h5>
@@ -47,6 +48,9 @@ include './inc/closedb.php';
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+  </div>
+</div>
+   
 </div>
 
 
