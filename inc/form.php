@@ -51,8 +51,8 @@ if (isset($_POST['submit'])) {
     $sql = " INSERT INTO Users(fname, lname, email) 
     VALUES ('$fname', '$lname', '$email')";
      if (mysqli_query($conn, $sql)) {
-        $_SESSION['Success'] = 'Der Name wurde erfolgreich hinzugefügt';
-        header('Location: ' . $_SERVER['PHP_SELF']);
+        header('Location: ' . $_SERVER['PHP_SELF'] . '?success=true');
+    exit();
        
     } else {
         echo 'Failed: ' . mysqli_error($conn);

@@ -29,12 +29,13 @@ include './inc/closedb.php';
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
       
-      <?php if (isset($_SESSION['Success'])): ?>
-        <div id="successMessage" class="alert alert-success" role="alert">
-            <?php echo $_SESSION['Success']; ?>
-        </div>
-        
-    <?php endif; ?>
+  <?php
+// Check if the 'success' query parameter is set to 'true'
+if (isset($_GET['success']) && $_GET['success'] == 'true'): ?>
+    <div id="successMessage" class="alert alert-success" role="alert">
+        Der Name wurde erfolgreich hinzugefügt
+    </div>
+<?php endif; ?>
 
         </form>
         </div>
