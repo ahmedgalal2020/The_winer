@@ -47,7 +47,7 @@ Der Gewinner
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <?php foreach ($users as $user): ?>
-      <div class="modal-body">
+      <div class="modal-body display-3 text-center">
       <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname']) ?>
       </div>
      <!--  <div class="modal-footer">
