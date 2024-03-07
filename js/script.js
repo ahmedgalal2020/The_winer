@@ -4,23 +4,21 @@ const card = document.querySelector('#card');
 win.addEventListener('click',function(){card.style.display = 'flex';});
 
 
-// Check if the success message exists in the DOM
-if (document.getElementById('successMessage')) {
-    // Wait 2 seconds (2000 milliseconds) before fading out the message
-    setTimeout(function() {
-        var successMessage = document.getElementById('successMessage');
-        // Fade out effect
-        var fadeEffect = setInterval(function () {
-            if (!successMessage.style.opacity) {
-                successMessage.style.opacity = 1;
-            }
-            if (successMessage.style.opacity > 0) {
-                successMessage.style.opacity -= 0.1;
-            } else {
-                clearInterval(fadeEffect);
-                // Optionally, remove the element or hide it after fade out
-                successMessage.style.display = 'none';
-            }
-        }, 100);
-    }, 2000);
-}
+document.addEventListener('DOMContentLoaded', (event) => {
+    if (document.getElementById('successMessage')) {
+        setTimeout(function() {
+            var successMessage = document.getElementById('successMessage');
+            var fadeEffect = setInterval(function () {
+                if (!successMessage.style.opacity) {
+                    successMessage.style.opacity = 1;
+                }
+                if (successMessage.style.opacity > 0) {
+                    successMessage.style.opacity -= 0.1; // Adjust this value as needed for a smoother or quicker fade
+                } else {
+                    clearInterval(fadeEffect);
+                    successMessage.style.display = 'none';
+                }
+            }, 100); // Adjust this value as well for a smoother or quicker fade
+        }, 2000); // The success message will start fading out after 2 seconds
+    }
+});
