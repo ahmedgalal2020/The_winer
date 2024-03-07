@@ -32,10 +32,10 @@ include './inc/closedb.php';
   <?php if(isset($_SESSION['Success'])): ?>
     <div id="successMessage" class="form-text success"><?php echo $_SESSION['Success']; ?></div>
     <?php 
-    // Unset the success message after displaying it
     unset($_SESSION['Success']); 
     ?>
 <?php endif; ?>
+
 
         </form>
         </div>
