@@ -30,7 +30,7 @@ include './inc/closedb.php';
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
       
   <?php if (isset($_GET['success']) && $_GET['success'] == 'true'): ?>
-    <div id="successMessage" class="alert alert-success" role="alert">
+    <div id="successMessage" class="alert alert-success mt-4" role="alert">
         Der Name wurde erfolgreich hinzugefügt
     </div>
     <script>
