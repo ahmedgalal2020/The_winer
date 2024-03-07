@@ -33,7 +33,7 @@ include './inc/closedb.php';
         <div id="successMessage" class="alert alert-success" role="alert">
             <?php echo $_SESSION['Success']; ?>
         </div>
-        <?php unset($_SESSION['Success']); ?>
+        
     <?php endif; ?>
 
         </form>
