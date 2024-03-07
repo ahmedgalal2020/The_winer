@@ -7,7 +7,7 @@ if (!$conn) {
 }
 
 $fname = $_POST['fname'];
-$lname = $_POST['lname'];
+$lname = $_POST['lname'];   
 $email = $_POST['email'];
 
 
