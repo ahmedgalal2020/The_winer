@@ -29,13 +29,20 @@ include './inc/closedb.php';
 
   <button type="submit" class="btn btn-primary" name="submit" value="send">Submit</button>
       
-  <?php
-// Check if the 'success' query parameter is set to 'true'
-if (isset($_GET['success']) && $_GET['success'] == 'true'): ?>
+  <?php if (isset($_GET['success']) && $_GET['success'] == 'true'): ?>
     <div id="successMessage" class="alert alert-success" role="alert">
         Der Name wurde erfolgreich hinzugefügt
     </div>
+    <script>
+        // Check if the URL contains the 'success=true' parameter
+        if (window.location.href.indexOf('?success=true') > -1) {
+            // Use HTML5 History API to remove the parameter without reloading
+            var cleanUrl = window.location.href.split('?')[0];
+            window.history.pushState({}, document.title, cleanUrl);
+        }
+    </script>
 <?php endif; ?>
+
 
         </form>
         </div>
