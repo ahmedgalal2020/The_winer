@@ -2,7 +2,7 @@
     display: none;
 }
 
-.alert-success{
+#successMessage{
     color: rgb(255, 255, 255);
     background-color: green;
     padding: 5px;
