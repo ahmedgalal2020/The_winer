@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
      if (mysqli_query($conn, $sql)) {
         $errors['Success']='Der Name wurde erfolgreich hinzugefügt';
         header('Location: ' . $_SERVER['PHP_SELF']);
-     
+        echo 'Failed: ';
     } else {
         echo 'Failed: ' . mysqli_error($conn);
     }
