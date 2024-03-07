@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include './inc/db.php';
 include './inc/form.php';
 include './inc/fetch.php';
