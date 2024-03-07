@@ -8,7 +8,7 @@ include './inc/closedb.php';
 
 <div class="position-relative text-center">
 <div class="col-md-5 p-lg-5 mx-auto my-5">
-<div class="headline">hi</div>
+
         <form action="<?php $_SERVER['PHP_SELF']?>" method="POST">
              <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Vorname</label>
@@ -33,10 +33,9 @@ include './inc/closedb.php';
 
     <!-- cards -->
     <div class="row">
+      <button id='winner'>Der Gewinner</button>
     <?php foreach ($users as $user): ?>
        <div class="col-sm-6">
-       
-     
         <div class="card my-2 text-center">
         <div class="card-header">
         <?php echo htmlspecialchars($user['fname']) . ' ' . htmlspecialchars($user['lname'])?>
