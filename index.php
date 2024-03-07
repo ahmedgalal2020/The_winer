@@ -50,8 +50,9 @@ include './inc/closedb.php';
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hinzufügen einer weiteren Person
+</button>
+        <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
       </div>
     </div>
   </div>
