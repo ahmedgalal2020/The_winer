@@ -51,7 +51,7 @@ include './inc/closedb.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hinzufügen einer weiteren Person</button>
-        <button id='winner' type="button" class="btn btn-primary">Der Gewinner</button>
+        <button  type="button" class="btn btn-primary">Der Gewinner</button>
       </div>
     </div>
   </div>
