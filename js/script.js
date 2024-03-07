@@ -6,7 +6,7 @@ win.addEventListener('click',function(){card.style.display = 'flex';});
 
 // Check if the success message exists in the DOM
 if (document.getElementById('successMessage')) {
-    // Wait 10 seconds (10000 milliseconds) before fading out the message
+    // Wait 2 seconds (2000 milliseconds) before fading out the message
     setTimeout(function() {
         var successMessage = document.getElementById('successMessage');
         // Fade out effect
@@ -22,5 +22,5 @@ if (document.getElementById('successMessage')) {
                 successMessage.style.display = 'none';
             }
         }, 100);
-    }, 10000);
+    }, 2000);
 }
